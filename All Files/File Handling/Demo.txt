@@ -1,0 +1,9 @@
+***It is a External File****
+Hello
+Welcome to File Handling in Python
+I am Rohit Singla 
+Here you teach you File Handling in Python
+I am Rohit Singla 
+Here you teach you File Handling in Python 
+I am Rohit Singla 
+Here you teach you File Handling in Python 

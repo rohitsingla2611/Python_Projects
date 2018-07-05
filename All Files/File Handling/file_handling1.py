@@ -1,0 +1,8 @@
+file_object = open("E:\\Python\\Python_Projects\\All Files\\File Handling\\Demo.txt", "r+")
+print('File before writing')
+print(file_object.read())
+file_object.write('\nI am Rohit Singla \nHere you teach you File Handling in Python ')
+print('File after writing')
+file_object.seek(0)
+print(file_object.read())
+file_object.close()
