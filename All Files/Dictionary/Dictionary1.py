@@ -11,3 +11,8 @@ dico1.pop(1)
 print(dico1)
 
 print(dico1.get('Name'))
+
+print(dico1)
+print(dico1)
+print(dico1)
+print(dico1)
