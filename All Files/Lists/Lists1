@@ -1,23 +1,72 @@
 list1 = [1, 'Rohit', 'Singla', 'BCA', 26, '-', 11, '-', 1997]
 list2 = [2, 'Suresh', 'Jain', 10, '-', 0o7, '-', 1972]
-
+list3 = []
+list4 = []
+list5 = [x for x in range(0, 101)]
+list6 = [x ** 2 for x in list5 if x % 2 == 0]
+list7 = ['even' for x in list5 if x % 2 == 0]
+list8 = ['even' if x % 2 == 0 else 'odd' for x in list5]
+list9 = []
+list10 = [x ** 2 if x % 2 == 0 else x ** 0.5 for x in range(0, 10000)]
 print(list1)
+print("----------------------------------------------")
 print(list2)
-
+print("----------------------------------------------")
 list1.append('Student')
 print(list1)
 
+print("----------------------------------------------")
 list2.extend(['Buissness', 'Man'])
 print(list2)
 
+print("----------------------------------------------")
 list2.insert(4, 'Hello')
 print(list2)
 
+print("----------------------------------------------")
 list2.pop()
 print(list2)
 
+print("----------------------------------------------")
 list2.pop()
 print(list2)
 
+print("----------------------------------------------")
 list2.pop()
 print(list2)
+
+for i in range(0, 100):
+    list3.append(i)
+
+print("----------------------------------------------")
+print(list3)
+
+for i in list3:
+    if i % 2 == 0:
+        list4.append(i)
+
+print("----------------------------------------------")
+print(list4)
+
+print("----------------------------------------------")
+print(list5)
+
+print("----------------------------------------------")
+print(list6)
+
+print("----------------------------------------------")
+print(list7)
+
+print("----------------------------------------------")
+print(list8)
+
+print("----------------------------------------------")
+for i in range(0, 10000):
+    if i % 2 == 0:
+        list9.append(i ** 2)
+    else:
+        list9.append(i ** 0.5)
+print(list9)
+
+print("----------------------------------------------")
+print(list10)
