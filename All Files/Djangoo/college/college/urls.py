@@ -20,6 +20,6 @@ from student import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('admin/', )
+    path('student/', views.front_page())
 
 ]
