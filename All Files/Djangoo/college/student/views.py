@@ -4,4 +4,4 @@ from django.http import HttpResponse
 
 
 def front_page(request):
-    return HttpResponse("<h1> </h1>")
+    return HttpResponse("<h1>xdfgsgsg </h1>")
