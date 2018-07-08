@@ -1,4 +1,5 @@
 # Create your views here.
+
 from django.shortcuts import render
 from django.http import HttpResponse
 
@@ -6,18 +7,18 @@ from django.http import HttpResponse
 def front_page(request):
     return HttpResponse("<table border =  2 cellspacing = 1 cellpadding = 10 bgcolor = 'cyan' bordercolor = 'red'>"
                         "<tr>"
-                        "<th>Roll No</th>"
+                        "<th>ID</th>"
                         "<th>Name</th>"
-                        "<th>Class</th>"
+                        "<th>Department</th>"
                         "</tr>"
                         "<tr>"
                         "<td>1.</td>"
-                        "<td>Rohit Singla</td>"
-                        "<td>BCA</td>"
+                        "<td>Sehj</td>"
+                        "<td>Python</td>"
                         "</tr>"
                         "<tr>"
                         "<td>2.</td>"
-                        "<td>Harman</td>"
-                        "<td>B.Tech</td>"
+                        "<td>Sarang</td>"
+                        "<td>Python</td>"
                         "</tr>"
                         "</table>")
