@@ -5,6 +5,10 @@ from django.http import HttpResponse
 
 
 def front_page(request):
+    return HttpResponse("</h1>Welcome Teachers</h1>")
+
+
+def data(request):
     return HttpResponse("<table border =  2 cellspacing = 1 cellpadding = 10 bgcolor = 'cyan' bordercolor = 'red'>"
                         "<tr>"
                         "<th>ID</th>"

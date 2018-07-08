@@ -26,7 +26,10 @@ import teacher
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('student/', student.views.front_page),
-    path('teacher/', teacher.views.front_page)
+    path('teacher/', include("teacher.urls")),
+    path('student/', include("student.urls")),
+
+    # path('student/', student.views.front_page),
+    # path('teacher/', teacher.views.front_page)
 
 ]
