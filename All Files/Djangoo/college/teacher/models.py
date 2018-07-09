@@ -10,4 +10,4 @@ class Teacher(models.Model):
     Department = models.CharField(max_length=10)
 
     def __str__(self):
-        return self.IdNo + self.Name + self.Department
+        return self.IdNo, self.Name, self.Department

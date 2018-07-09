@@ -1,8 +1,8 @@
-from django.conf.urls import url
-from django.urls import path
+from django.urls import path, re_path
 from . import views
 
 urlpatterns = [
     path('', views.front_page),
-    path('data/', views.data)
+    re_path('(?P<roll_no>[0-9]{1})/', views.data),
+    # re_path('data/', views.data)
 ]

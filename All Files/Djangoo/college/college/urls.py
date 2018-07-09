@@ -28,6 +28,7 @@ from college import views
 urlpatterns = [
     path('', views.front_page),
     path('admin/', admin.site.urls),
+    path('classroom/', include("classroom.urls")),
     path('teacher/', include("teacher.urls")),
     path('student/', include("student.urls")),
 

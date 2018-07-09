@@ -38,7 +38,7 @@ print(code5)
 code6 = code.findAll("p")
 code7 = code.findAll(itemprop="articleBody")
 
-code7 = code7.__str__().replace("<p>", "").replace("<>", "").replace(".", ".\n").replace("<div", "")
+code7 = code7.__str__.replace("<p>", "").replace("<>", "").replace(".", ".\n").replace("<div", "")
 code7 = code7
 code7 = code7
 code7 = code7[49:-7]
