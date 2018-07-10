@@ -21,7 +21,9 @@ def data(request, roll_no):
     html += "<li>" + str(std.RollNo) + " " + str(std.Name) + "</li>"
     html += "</ol>"
     return HttpResponse(html)
-    '''
+
+
+'''
     try:
         std = Student.objects.get(RollNo=roll_no)
         html = "<ol>"
