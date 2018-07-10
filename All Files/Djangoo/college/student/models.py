@@ -8,4 +8,4 @@ class Student(models.Model):
     Course = models.CharField(max_length=10)
 
     def __str__(self):
-        return self.RollNo + "    " + self.Name + "     " + self.Course
+        return self.RollNo, "    ", self.Name, "     ", self.Course
