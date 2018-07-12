@@ -1,18 +1,22 @@
 # Create your views here.
 
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, get_list_or_404
 from django.http import HttpResponse, Http404
+
+from student import models
 from .models import Student
 
 
 def front_page(request):
-    stds = Student.objects.all()
+    stds = models.Student.objects.all()  # Student.objects.all()
+    context = {'stds': stds}
     html = "<ol>"
-    for std in stds:
-        html += "<li>" + "<a href ='student/" + str(std.RollNo) + "'>" + str(std.Name) + "</a>" + "</li>"
-    html += "</ol>"
+    # for std in stds:
+    #   html += "<li>" + "<a href ='student/" + str(std.RollNo) + "'>" + str(std.Name) + "</a>" + "</li>"
+    # html += "</ol>"
 
-    return HttpResponse(html)
+    # return HttpResponse(html)
+    return render(request, "student/Front_Page.html", context)
 
 
 def data(request, roll_no):

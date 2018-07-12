@@ -1,0 +1,576 @@
+<html>
+<head>
+    {% load staticfiles %}
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+.navbar {
+    overflow: hidden;
+    background-color: #333;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left: 200px;
+
+}
+
+.navbar a {
+    float: left;
+    font-size: 16px;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+
+}
+
+.dropdown {
+    float: left;
+    overflow: hidden;
+}
+
+.dropdown .dropbtn {
+    font-size: 16px;
+    border: none;
+    outline: none;
+    color: white;
+    padding: 14px 16px;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+}
+
+.navbar a:hover, .dropdown:hover .dropbtn {
+    background-color: red;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Fixed sidenav, full height */
+.sidenav {
+  height: 100%;
+  width: 200px;
+  position: fixed;
+  z-index: 1;
+  top: 8px;;
+  left: 0;
+  background-color: #333;
+  overflow-x: hidden;
+  padding-top: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  opacity: 0.7;
+
+}
+
+/* Style the sidenav links and the dropdown button */
+.sidenav a, .dropdown-btn {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 15px;
+  color: #818181;
+  display: block;
+  border: none;
+  background: none;
+  width:100%;
+  text-align: left;
+  cursor: pointer;
+  outline: none;
+}
+
+/* On mouse-over */
+.sidenav a:hover, .dropdown-btn:hover {
+  color: #f1f1f1;
+}
+
+/* Main content */
+.main {
+  margin-left: 200px; /* Same as the width of the sidenav */
+  font-size: 20px; /* Increased text to enable scrolling */
+  padding: 0px 10px;
+}
+
+/* Add an active class to the active dropdown button */
+.active {
+  background-color: green;
+  color: white;
+}
+
+/* Dropdown container (hidden by default). Optional: add a lighter background color and some left padding to change the design of the dropdown content */
+.dropdown-container {
+  display: none;
+  background-color: #262626;
+  padding-left: 8px;
+}
+
+/* Optional: Style the caret down icon */
+.fa-caret-down {
+  float: right;
+  padding-right: 8px;
+}
+
+
+
+
+
+
+* {box-sizing: border-box}
+body {font-family: Verdana, sans-serif; margin:0}
+.mySlides {display: none}
+img {vertical-align: middle;}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 650px;
+  position: relative;
+  margin-left: 250px;
+  float:left;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+  float:left;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .prev, .next,.text {font-size: 11px}
+}
+
+
+
+
+
+.form-style-5{
+    max-width: 300px;
+    max-height: 500px;
+    padding: 10px 20px;
+    background: #f4f7f8;
+    margin: 15px;
+    padding: 20px;
+    background: #f4f7f8;
+    border-radius: 8px;
+    font-family: Georgia, "Times New Roman", Times, serif;
+    float: right;
+    position:relative;
+}
+.form-style-5 fieldset{
+    border: none;
+}
+.form-style-5 legend {
+    font-size: 1.4em;
+    margin-bottom: 10px;
+}
+.form-style-5 label {
+    display: block;
+    margin-bottom: 8px;
+}
+.form-style-5 input[type="text"],
+.form-style-5 input[type="date"],
+.form-style-5 input[type="datetime"],
+.form-style-5 input[type="email"],
+.form-style-5 input[type="number"],
+.form-style-5 input[type="search"],
+.form-style-5 input[type="time"],
+.form-style-5 input[type="url"],
+.form-style-5 textarea,
+.form-style-5 select {
+    font-family: Georgia, "Times New Roman", Times, serif;
+    background: rgba(255,255,255,.1);
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    margin: 0;
+    outline: 0;
+    padding: 7px;
+    width: 100%;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    background-color: #e8eeef;
+    color:#8a97a0;
+    -webkit-box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
+    box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
+    margin-bottom: 30px;
+
+}
+.form-style-5 input[type="text"]:focus,
+.form-style-5 input[type="date"]:focus,
+.form-style-5 input[type="datetime"]:focus,
+.form-style-5 input[type="email"]:focus,
+.form-style-5 input[type="number"]:focus,
+.form-style-5 input[type="search"]:focus,
+.form-style-5 input[type="time"]:focus,
+.form-style-5 input[type="url"]:focus,
+.form-style-5 textarea:focus,
+.form-style-5 select:focus{
+    background: #d2d9dd;
+}
+.form-style-5 select{
+    -webkit-appearance: menulist-button;
+    height:35px;
+}
+.form-style-5 .number {
+    background: #1abc9c;
+    color: #fff;
+    height: 30px;
+    width: 30px;
+    display: inline-block;
+    font-size: 0.8em;
+    margin-right: 4px;
+    line-height: 30px;
+    text-align: center;
+    text-shadow: 0 1px 0 rgba(255,255,255,0.2);
+    border-radius: 15px 15px 15px 0px;
+}
+
+.form-style-5 input[type="submit"],
+.form-style-5 input[type="button"]
+{
+    position: relative;
+    display: block;
+    padding: 19px 29px 18px 29px;
+    color: #FFF;
+    margin: 0 auto;
+    background: #1abc9c;
+    font-size: 18px;
+    text-align: center;
+    font-style: normal;
+    width: 100%;
+    border: 1px solid #16a085;
+    border-width: 1px 1px 3px;
+    margin-bottom: 10px;
+}
+.form-style-5 input[type="submit"]:hover,
+.form-style-5 input[type="button"]:hover
+{
+    background: #109177;
+}
+
+    </style>
+</head>
+<body background="C:\Users\Pranav Kumar\Desktop\django\college\static\images\college1.jpg"
+      style="background-size:1366px 750px;">
+<div class="container">
+    <div class="navbar">
+
+        <div class="dropdown">
+            <button class="dropbtn">About US
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+                <a href="#">Principle's Desk</a>
+                <a href="#">Administration</a>
+                <a href="#">Mission</a>
+                <a href="#">Vision</a>
+                <a href="#">Goals</a>
+                <a href="#">History</a>
+                <a href="#">Campus</a>
+                <a href="#">Bog</a>
+                <a href="#">Balance Sheets</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn">Admission
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+                <a href="#">Courses Offered</a>
+                <a href="#">Admission Criteria</a>
+                <a href="#">Anti-Ragging</a>
+                <a href="#">Information Brochure</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn">Academics
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+                <a href="#">Academic Regulations</a>
+                <a href="#">Academic Calender</a>
+                <a href="#">Academic Counsil</a>
+                <a href="#">Under Graduation</a>
+                <a href="#">Post Graduation</a>
+                <a href="#">PhD under QIP</a>
+                <a href="#">List Of Holidays</a>
+                <a href="#">Roll of honour</a>
+                <a href="#">Equivalence Certificate</a>
+                <a href="#">Results</a>
+                <a href="#">LCMS</a>
+
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn">Departments
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+                <a href="#">Applied Sciences</a>
+                <a href="#">Civil Engineering</a>
+                <a href="#">Electrical Engineering</a>
+                <a href="#">Mechanical Engineering</a>
+                <a href="#">Electronics and Communication Engineering</a>
+                <a href="#">Computer Science and Engineering</a>
+                <a href="#">Information Technology</a>
+                <a href="#">Masters in Business Administration</a>
+                <a href="#">Masters in computer Applications</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn">Facilities
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+                <a href="#">Computer Centre</a>
+                <a href="#">Library</a>
+                <a href="#">Sports</a>
+                <a href="#">Workshops</a>
+                <a href="#">NSS</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn">Research
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+                <a href="#">Testing and Consulatancy Cell</a>
+                <a href="#">Research and development</a>
+                <a href="#">Call for papers</a>
+                <a href="#">Mou's</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn">Quality Work
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+                <a href="#">Autonomy</a>
+                <a href="#">NIRF</a>
+                <a href="#">AICTE Approval</a>
+                <a href="#">PTU Affiliation</a>
+                <a href="#">IE(I) Accreditation</a>
+                <a href="#">NAAC</a>
+                <a href="#">NBA & ISO Certification</a>
+                <a href="#">TCS Accreditation</a>
+                <a href="#">TEQIP</a>
+                <a href="#">Status Proof</a>
+                <a href="#">Handatory Disclosure</a>
+                <a href="#">Swayam : MOOCS Courses</a>
+                <a href="#">IQAC</a>
+                <a href="#">QIP</a>
+                <a href="#">Unnat Bhaarat Abhiyan</a>
+                <a href="#">Supporting Staff</a>
+            </div>
+        </div>
+        <a href="#home">Email</a>
+        <a href="#news">T & P</a>
+    </div>
+
+    <div class="sidenav">
+        <a href="#about">List Of Students</a>
+        <a href="#services">List Of Teachers</a>
+        <a href="#clients">List Of Classroom</a>
+        <a href="#contact">JADU....</a>
+        <button class="dropdown-btn">Job Openings
+            <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-container">
+            <a href="#">Professor</a>
+            <a href="#">Associate Teacher</a>
+            <a href="#">Assistant Teacher</a>
+        </div>
+        <a href="#contact">Search</a>
+    </div>
+    <br>
+    <div style="padding-left:10px;">
+        <div class="slideshow-container">
+
+            <div class="mySlides fade">
+                <div class="numbertext">1 / 3</div>
+                <img src="C:\Users\Pranav Kumar\Desktop\django\college\static\images\college2.jpg" style="width:100%">
+                <div class="text">Caption Text</div>
+            </div>
+
+            <div class="mySlides fade">
+                <div class="numbertext">2 / 3</div>
+                <img src={% static "images\college3.jpg" %} style="width:100%">
+                <div class="text">Caption Two</div>
+            </div>
+
+            <div class="mySlides fade">
+                <div class="numbertext">3 / 3</div>
+                <img src="{% static 'images\college4.jpg' %}" style="width:100%">
+                <div class="text">Caption Three</div>
+            </div>
+
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+        </div>
+
+
+    </div>
+    <div class="form-style-5">
+        <form>
+            <fieldset>
+                <legend><span class="number">1</span> Candidate Info</legend>
+                <input type="text" name="field1" placeholder="Your Name *">
+                <input type="email" name="field2" placeholder="Your Email *">
+                <textarea name="field3" placeholder="About yourself"></textarea>
+                <label for="job">Interests:</label>
+                <select id="job" name="field4">
+                    <optgroup label="Indoors">
+                        <option value="fishkeeping">Fishkeeping</option>
+                        <option value="reading">Reading</option>
+                        <option value="boxing">Boxing</option>
+                        <option value="debate">Debate</option>
+                        <option value="gaming">Gaming</option>
+                        <option value="snooker">Snooker</option>
+                        <option value="other_indoor">Other</option>
+                    </optgroup>
+                    <optgroup label="Outdoors">
+                        <option value="football">Football</option>
+                        <option value="swimming">Swimming</option>
+                        <option value="fishing">Fishing</option>
+                        <option value="climbing">Climbing</option>
+                        <option value="cycling">Cycling</option>
+                        <option value="other_outdoor">Other</option>
+                    </optgroup>
+                </select>
+            </fieldset>
+            <fieldset>
+                <legend><span class="number">2</span> Additional Info</legend>
+                <textarea name="field3" placeholder="About Your School"></textarea>
+            </fieldset>
+            <input type="submit" value="Apply"/>
+        </form>
+    </div>
+</div>
+</body>
+<script>
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+}
+
+</script>
+</html>

@@ -5,6 +5,7 @@ from django.http import HttpResponse
 
 
 def front_page(request):
-    return HttpResponse("</h1>Welcome to Django</h1>"
-                        "<br/>"
-                        "</h1>Rohit Singla</h1>")
+    return render(request, 'base1.html', {})
+    # return HttpResponse("</h1>Welcome to Django</h1>"
+    #                   "<br/>"
+    #                  "</h1>Rohit Singla</h1>")

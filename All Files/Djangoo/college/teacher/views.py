@@ -6,6 +6,7 @@ from .models import Teacher
 
 
 def front_page(request):
+    stds = Teacher
     return HttpResponse("</h1>Welcome Teachers</h1>")
 
 

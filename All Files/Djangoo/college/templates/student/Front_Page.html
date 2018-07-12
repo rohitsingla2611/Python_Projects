@@ -1,10 +1,18 @@
 <!DOCTYPE html>
+{% extends 'base.html'%}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
 <body>
-
+{% for std in stds %}
+<h1> Hello it's Rohit Singla here to Serve You</h1>
+<ul>
+    <li> My name is {{ std.Name }}</li>
+    <li> And roll no is{{ std.RollNo }}</li>
+    <li> And Ciurse is{{ std.Course }}</li>
+</ul>
+{% endfor %}
 </body>
 </html>
