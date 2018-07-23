@@ -1,5 +1,4 @@
 # Change Resoultion
-# Rescale Frame
 
 import numpy as np
 import cv2
@@ -29,8 +28,9 @@ def change_res(width, height):
 
 # make_1080p()
 # make_480p()
-# make_720p()
-change_res(4000, 2000)
+make_720p()
+# change_res(4000, 2000)
+
 
 while True:
     ret, frame = cap.read()
