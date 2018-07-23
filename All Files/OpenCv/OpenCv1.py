@@ -1,3 +1,6 @@
+# Open Camera
+# Gray Frame
+
 import numpy as np
 import cv2
 
