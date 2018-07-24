@@ -27,6 +27,12 @@ while True:
     frame1 = rescale_frame(frame, percent=30)
     cv2.imshow('frame1', frame1)
 
+    gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
+    cv2.imshow('Gray', gray)
+
+    frame2 = rescale_frame(gray, percent=10)
+    cv2.imshow('frame2', frame2)
+
     if cv2.waitKey(1) & 0xFF == ord('q'):
         break
 
