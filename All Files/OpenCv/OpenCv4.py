@@ -4,7 +4,7 @@ import os
 import cv2
 import numpy as nm
 
-filename = 'vide11o.avTYYYi'
+filename = 'video.avi'
 frame_per_second = 24.0
 res = '720p'
 
