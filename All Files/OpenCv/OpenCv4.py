@@ -1,4 +1,8 @@
 # Video Recording
+# Normal range of frame_per_second = 24
+# More no. of frame_per_second it fastens the video
+# Less no. of frame_per_second it slows the video (SLOW-MO)
+
 
 import os
 import cv2
@@ -46,7 +50,7 @@ def get_video_type(filename):
 
 
 cap = cv2.VideoCapture(0)
-out = cv2.VideoWriter(filename, get_video_type(filename), 25, get_dims(cap, res))
+out = cv2.VideoWriter(filename, get_video_type(filename), frame_per_second, get_dims(cap, res))
 
 while True:
     ret, frame = cap.read()
