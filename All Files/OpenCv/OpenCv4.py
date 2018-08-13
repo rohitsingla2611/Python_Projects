@@ -9,7 +9,7 @@ import cv2
 import numpy as nm
 
 filename = 'video.avi'
-frame_per_second = 8.0
+frame_per_second = 24.0
 res = '720p'
 
 
